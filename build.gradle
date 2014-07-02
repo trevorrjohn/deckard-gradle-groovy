@@ -108,3 +108,8 @@ idea {
         testOutputDir = file('build/test-classes/debug')
     }
 }
+
+if (System.getProperty("intellij")) {
+    def script = file("scripts/fix_intellij_dependencies.sh")
+    script.toString().execute()
+}
